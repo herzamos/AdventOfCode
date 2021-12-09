@@ -1,8 +1,9 @@
-from os import system, name
-import sys
-import time
+import os
+
+palette = [[u"\u001b[48;5;17m ", ]]
 
 def partTwoAnimation():
+    os.system('cls' if os.name == 'nt' else 'clear')
     height = []
     isRisk = []
     colorMap = []
@@ -42,6 +43,8 @@ def colorAdjacent(i, j, height, color, colorMap, colored):
     if colorMap[i][j] != 0:
         return
     if height[i][j] == 9:
+        colored[i][j] = True
+        drawMap(height, colored)
         return
     colorMap[i][j] = color
     colored[i][j] = True
@@ -50,40 +53,34 @@ def colorAdjacent(i, j, height, color, colorMap, colored):
         colorAdjacent(k, l, height, color, colorMap, colored)
         
 def drawMap(height, colored):
-    clear()
     toPrint = ""
     for i in range(len(height)):
         for j in range(len(height[0])):
             if colored[i][j]:
                 if height[i][j] == 9:
-                    toPrint += u"\u001b[48;5;14m 9"
-                elif 6 <= height[i][j] <= 8:
-                    toPrint += u"\u001b[48;5;33m " + str(height[i][j])
-                elif 3 <= height[i][j] <= 5:
-                    toPrint += u"\u001b[48;5;31m " + str(height[i][j])
+                    toPrint += u"\u001b[48;5;16m " + str(height[i][j])
+                elif 7 <= height[i][j] <= 8:
+                    toPrint += u"\u001b[48;5;196m " + str(height[i][j])
+                elif 4 <= height[i][j] <= 6:
+                    toPrint += u"\u001b[48;5;202m " + str(height[i][j])
+                elif height[i][j] == 3:
+                    toPrint += u"\u001b[48;5;220m " + str(height[i][j])
                 else:   
-                    toPrint += u"\u001b[48;5;26m " + str(height[i][j])
+                    toPrint += u"\u001b[48;5;228m " + str(height[i][j])
             else:
                 if height[i][j] == 9:
-                    toPrint += u"\u001b[48;5;238m 9"
-                elif 6 <= height[i][j] <= 8:
+                    toPrint += u"\u001b[48;5;16m 9"
+                elif 7 <= height[i][j] <= 8:
+                    toPrint += u"\u001b[48;5;240m " + str(height[i][j])
+                elif 4 <= height[i][j] <= 6:
                     toPrint += u"\u001b[48;5;242m " + str(height[i][j])
-                elif 3 <= height[i][j] <= 5:
-                    toPrint += u"\u001b[48;5;246m " + str(height[i][j])
+                elif height[i][j] == 3:
+                    toPrint += u"\u001b[48;5;244m " + str(height[i][j])
                 else:   
-                    toPrint += u"\u001b[48;5;250m " + str(height[i][j])
+                    toPrint += u"\u001b[48;5;246m " + str(height[i][j])
         toPrint += "\n"
-    sys.stdout.write(toPrint)
-    time.wait(1)
-        
-def clear():
-    # for windows
-    if name == 'nt':
-        _ = system('cls')
-    # for mac and linux(here, os.name is 'posix')
-    else:
-        _ = system('clear')
-        
+    print(toPrint)
+    print(u"\033[0;0Hm")
 
 if __name__ == "__main__":
     partTwoAnimation()
