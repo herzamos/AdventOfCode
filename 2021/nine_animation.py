@@ -54,6 +54,7 @@ def colorAdjacent(i, j, height, color, colorMap, colored):
         
 def drawMap(height, colored):
     toPrint = ""
+    toPrint += u"\x1B[?25l"
     for i in range(len(height)):
         for j in range(len(height[0])):
             if colored[i][j]:
