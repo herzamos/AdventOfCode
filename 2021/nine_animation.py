@@ -74,6 +74,7 @@ def drawMap(height, colored):
                     toPrint += u"\u001b[48;5;250m " + str(height[i][j])
         toPrint += "\n"
     sys.stdout.write(toPrint)
+    time.wait(1)
         
 def clear():
     # for windows
