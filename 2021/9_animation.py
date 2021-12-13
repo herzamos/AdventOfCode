@@ -9,7 +9,7 @@ def partTwoAnimation():
     colorMap = []
     colored = []
     color = 1
-    with open("nine.txt", "r") as f:
+    with open("9.txt", "r") as f:
         for line in f.readlines():
             height.append(list(map(int, list(line.strip("\n")))))
             isRisk.append([True for i in range(len(line))])

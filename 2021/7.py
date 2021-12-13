@@ -2,7 +2,7 @@ import sys
 
 def partOne():
     crabs = []
-    with open("seven.txt", "r") as f:
+    with open("7.txt", "r") as f:
         crabs = list(map(int, f.readline().strip("\n").split(",")))
     m = max(crabs)
     minFuel = sys.maxsize

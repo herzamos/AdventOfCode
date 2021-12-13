@@ -1,5 +1,5 @@
 def partOne(days):
-    with open("six.txt", "r") as f:
+    with open("6.txt", "r") as f:
         fishes = list(map(int, f.readline().strip("\n").split(",")))
     for i in range(1, days+1):
         for j in range(len(fishes)):

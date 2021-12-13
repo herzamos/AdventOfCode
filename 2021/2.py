@@ -15,7 +15,7 @@ def partOne():
 
 def partTwo():
     h = d = a = 0
-    with open("two.txt", "r") as f:
+    with open("2.txt", "r") as f:
         for line in f.readlines():
             dir = line.rstrip("\n").split()[0]
             x = int(line.split()[1])

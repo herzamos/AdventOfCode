@@ -1,6 +1,6 @@
 def partOne():
     sum = 0
-    with open("eight.txt", "r") as f:
+    with open("8.txt", "r") as f:
         for line in f.readlines():
             l = line.strip("\n").split(" | ")
             output = l[1].split(" ")

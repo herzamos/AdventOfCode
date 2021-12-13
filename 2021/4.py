@@ -4,7 +4,7 @@ def partOne():
     results = []
     currResult = []
     currCard = []
-    with open("four.txt", "r") as f:
+    with open("4.txt", "r") as f:
         i = 0
         for line in f.readlines():
             if i == 0:

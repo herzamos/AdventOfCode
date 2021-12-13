@@ -3,7 +3,7 @@ def partOne():
     coord1 = []
     coord2 = []
     ret = 0
-    with open("five.txt", "r") as f:
+    with open("5.txt", "r") as f:
         for line in f.readlines():
             coords = line.strip("\n").split(" -> ")
             coord1.append([int(x) for x in coords[0].split(",")])

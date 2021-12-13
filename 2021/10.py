@@ -7,7 +7,7 @@ def partOneAndTwo():
     found = False
     res = 0
     lines = []
-    with open("ten.txt", "r") as f:
+    with open("10.txt", "r") as f:
         for line in f.readlines():
             lines.append(list(line.strip("\n")))
     corrupted = [False for x in range(len(lines))]

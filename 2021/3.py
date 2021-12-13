@@ -1,5 +1,5 @@
 def partOne():
-    with open("three.txt", "r") as f:
+    with open("3.txt", "r") as f:
         i = 0
         gamma = epsilon = ""
         b = []

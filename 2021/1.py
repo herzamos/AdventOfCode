@@ -1,6 +1,6 @@
 def partOne():
     l = []
-    with open("one.txt", "r") as f:
+    with open("1.txt", "r") as f:
         for line in f.readlines():
             l.append(int(line))
     count = 0
