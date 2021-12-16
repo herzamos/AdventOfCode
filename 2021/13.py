@@ -23,6 +23,7 @@ def fold(paper, vertical, coord):
 
 points = []
 coords = []
+
 with open("13.txt", "r") as f:
     for line in f.readlines():
         if len(line.strip("\n").split("=")) != 1:
