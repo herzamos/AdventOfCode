@@ -35,7 +35,7 @@ def parse(packet):
         i, j = 22, 0
         while j < L:
             parsed = parse(packet[i:len(packet)])
-            j += i - parsed[1]
+            j += parsed[1]
             i += parsed[1]
             version += parsed[0]
         return version, i

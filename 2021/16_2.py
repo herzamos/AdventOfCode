@@ -9,6 +9,7 @@ def literal_to_number(packet):
         i += 5
     literal += packet[i+1:i+5]
     i += 5
+    print(packet[:i])
     return int(literal, 2), i
     
 
@@ -62,7 +63,7 @@ def parse(packet):
         i, j = 22, 0
         while j < L:
             parsed = parse(packet[i:])
-            j += i - parsed[1]
+            j += parsed[1]
             i += parsed[1]
             if id == 0:
                 res += parsed[0]
@@ -95,6 +96,6 @@ with open("16.txt", "r") as f:
     line = f.readline().strip("\n")
     for c in list(line):
         packet += str(bin(int(c, 16))[2:].zfill(4))
-print(packet)
+
 print(len(packet))
 print(parse(packet))
